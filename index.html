@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manmona ❤️</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:linear-gradient(black,#1a001a,#330000);
+color:white;
+text-align:center;
+overflow-x:hidden;
+}
+
+.hidden{display:none;}
+
+.section{
+padding:40px 20px;
+}
+
+button{
+padding:12px 25px;
+margin:10px;
+border:none;
+border-radius:25px;
+background:#ff004c;
+color:white;
+cursor:pointer;
+font-size:16px;
+}
+
+input{
+padding:10px;
+border-radius:20px;
+border:none;
+text-align:center;
+}
+
+/* قلوب متحركة */
+.heart{
+position:fixed;
+color:#ff004c;
+animation:float 5s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(100vh);}
+100%{transform:translateY(-10vh);}
+}
+
+.card{
+background:#2a002a;
+padding:20px;
+margin:15px;
+border-radius:20px;
+}
+
+img{
+width:200px;
+border-radius:15px;
+margin:10px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- صفحة الدخول -->
+<div id="login" class="section">
+<h2>🔐 الصفحة السرية</h2>
+<input type="password" id="password" placeholder="اكتب الكود">
+<br>
+<button onclick="checkPassword()">دخول</button>
+</div>
+
+<!-- المحتوى -->
+<div id="content" class="hidden">
+
+<div class="section">
+<h1>Manmona ❤️</h1>
+<h3>خطوبة 💍</h3>
+<p>من يوم ما بدأنا: 17/10/2025</p>
+<h2 id="counter"></h2>
+</div>
+
+<!-- أغنية يوتيوب -->
+<div class="section">
+<h2>🎵 أغنيتنا</h2>
+<iframe width="300" height="200"
+src="https://www.youtube.com/embed/VIDEO_ID?autoplay=1&loop=1&playlist=VIDEO_ID"
+frameborder="0" allow="autoplay"></iframe>
+<p>غير VIDEO_ID برقم فيديو اغنية عارف كام سنة لعمرو دياب</p>
+</div>
+
+<!-- ألبوم صور -->
+<div class="section">
+<h2>📸 ألبوم صورنا</h2>
+<img src="https://via.placeholder.com/200">
+<img src="https://via.placeholder.com/200">
+<img src="https://via.placeholder.com/200">
+<p>غير اللينكات بصوركم ❤️</p>
+</div>
+
+<!-- رسايل -->
+<div class="section">
+<h2>💌 رسايل ليكي</h2>
+<button onclick="showMessage()">افتح الرسالة</button>
+<p id="message"></p>
+</div>
+
+<!-- لعبة أسئلة -->
+<div class="section">
+<h2>🎮 لعبة أسئلة بينا</h2>
+<div class="card">فين أول مكان خرجنا فيه؟ 😍</div>
+<div class="card">مين قال بحبك الأول؟ ❤️</div>
+<div class="card">أكتر حاجة بحبها فيكي؟ 🌹</div>
+</div>
+
+<!-- كروت خاصة -->
+<div class="section">
+<h2>🎟 كروت خاصة</h2>
+<div class="card">كارت حضن مفتوح ♾❤️</div>
+<div class="card">كارت خروجة رومانسية 🌹</div>
+<div class="card">كارت مفاجأة غير متوقعة 🎁</div>
+</div>
+
+</div>
+
+<script>
+
+function checkPassword(){
+let pass = document.getElementById("password").value;
+if(pass === "الكون"){
+document.getElementById("login").style.display="none";
+document.getElementById("content").classList.remove("hidden");
+startHearts();
+}
+else{
+alert("الكود غلط ❤️");
+}
+}
+
+// عداد تصاعدي
+let startDate = new Date("2025-10-17");
+
+function updateCounter(){
+let now = new Date();
+let diff = now - startDate;
+let days = Math.floor(diff / (1000*60*60*24));
+document.getElementById("counter").innerHTML =
+"عدى على خطوبتنا " + days + " يوم ❤️";
+}
+setInterval(updateCounter,1000);
+
+// رسالة
+function showMessage(){
+document.getElementById("message").innerHTML =
+"وجودك في حياتي أجمل حاجة حصلتلي ❤️";
+}
+
+// قلوب متحركة
+function startHearts(){
+setInterval(()=>{
+let heart = document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(20+Math.random()*30)+"px";
+document.body.appendChild(heart);
+setTimeout(()=>{heart.remove();},5000);
+},500);
+}
+
+</script>
+
+</body>
+</html>
