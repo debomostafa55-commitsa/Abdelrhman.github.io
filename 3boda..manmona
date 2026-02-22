@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manmona ❤️</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:linear-gradient(black,#1a001a,#330000);
+color:white;
+text-align:center;
+overflow-x:hidden;
+}
+
+.hidden{display:none;}
+
+.section{
+padding:40px 20px;
+}
+
+button{
+padding:12px 25px;
+margin:10px;
+border:none;
+border-radius:25px;
+background:#ff004c;
+color:white;
+cursor:pointer;
+font-size:16px;
+}
+
+input{
+padding:10px;
+border-radius:20px;
+border:none;
+text-align:center;
+}
+
+/* قلوب متحركة */
+.heart{
+position:fixed;
+color:#ff004c;
+animation:float 5s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(100vh);}
+100%{transform:translateY(-10vh);}
+}
+
+.card{
+background:#2a002a;
+padding:20px;
+margin:15px;
+border-radius:20px;
+}
+
+img{
+width:200px;
+border-radius:15px;
+margin:10px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- صفحة الدخول -->
+<div id="login" class="section">
+<h2>🔐 الصفحة السرية</h2>
+<input type="password" id="password" placeholder="اكتب الكود">
+<br>
+<button onclick="checkPassword()">دخول</button>
+</div>
+
+<!-- المحتوى -->
+<div id="content" class="hidden">
+
+<div class="section">
+<h1>Manmona ❤️</h1>
+<h3>خطوبة 💍</h3>
+<p>من يوم ما بدأنا: 17/10/2025</p>
+<h2 id="counter"></h2>
+</div>
+
+<!-- أغنية يوتيوب -->
+<div class="section">
+<h2>🎵 أغنيتنا</h2>
+<iframe width="300" height="200"
+src="https://www
